@@ -11,5 +11,13 @@ app.get('/home',(req,res)=>{
     `)
 }
 )
-
+app.get('/api',(req,res)=>{
+    res.send(
+        {
+            user:"mike",
+            Cars:['Alto','JEEP']
+        }
+    )
+    
+})
 app.listen(3000)
