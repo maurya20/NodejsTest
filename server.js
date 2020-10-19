@@ -25,7 +25,7 @@ const Car = mongoose.model("Car", carSchema)
 //     console.log(doc)
 // })
 
-Car.find({_id:"5f8d2afe439f7e23842e38d4"},(err,doc)=>{
+Car.remove({year:2005},(err,doc)=>{
     if(err) return console.log(err)
     console.log(doc)
 })
