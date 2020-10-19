@@ -11,11 +11,13 @@ const carSchema = mongoose.Schema({
 })
 
 const Car = mongoose.model("Car", carSchema)
+
+
 // const adCar = new Car({
-//     brand:"Ford",
-//     model:"Mustang",
-//     year:2006,
-//     available:false
+//     brand:"Tata",
+//     model:"x45",
+//     year:2019,
+//     available:true
 // })
 
 // adCar.save((err,doc)=>{
@@ -23,7 +25,7 @@ const Car = mongoose.model("Car", carSchema)
 //     console.log(doc)
 // })
 
-Car.find((err,doc)=>{
+Car.find({brand:"Tata"},(err,doc)=>{
     if(err) return console.log(err)
     console.log(doc)
 })
