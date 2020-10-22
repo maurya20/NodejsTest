@@ -1,9 +1,14 @@
-const express = require('express')
-const app = express()
+var express = require('express');
+var app = express();
 
-var things = require('./things.js');
-
-//both index.js and things.js should be in same directory
-app.use('/things', things);
+//Simple request time logger
+app.use(function(req, res, next){
+   console.log("A new request received at " + Date.now());
+   
+   //This function call is very important. It tells that more processing is
+   //required for the current request and is in the next middleware
+  
+   next();
+});
 
 app.listen(3000);
