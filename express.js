@@ -1,14 +1,10 @@
 var express = require('express');
 var app = express();
 
-//Simple request time logger
-app.use(function(req, res, next){
-   console.log("A new request received at " + Date.now());
-   
-   //This function call is very important. It tells that more processing is
-   //required for the current request and is in the next middleware
-  
-   next();
+app.use('/images',express.static(__dirname + '/media'))
+app.get('/get', function(req, res){
+   res.send('The id you specified is');
 });
 
-app.listen(3000);
+
+app.listen(3000)
